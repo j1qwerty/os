@@ -8,6 +8,7 @@ from worldview.domain.models import LlmSynthesisResult
 TELEMETRY = seed_telemetry()
 INTEL_RECORDS = seed_intelligence_records()
 FEATURE_CONFIG = default_feature_config()
+from worldview.providers import PROVIDERS, required_env_vars
 
 
 def get_providers(domain: str | None = None, free_tier: bool | None = None) -> list[dict]:

@@ -2,6 +2,8 @@ from datetime import datetime
 from typing import List, Dict, Any
 
 from pydantic import BaseModel, Field
+from typing import List, Dict
+from pydantic import BaseModel
 
 
 class ProviderModel(BaseModel):

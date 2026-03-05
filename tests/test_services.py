@@ -11,6 +11,8 @@ from worldview.core.services import (
     to_mgrs,
 )
 
+from worldview.core.services import get_domain_summary, get_providers, get_required_keys
+
 
 class ServicesTestCase(unittest.TestCase):
     def test_provider_registry_has_entries(self):
