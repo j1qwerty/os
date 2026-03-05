@@ -1,0 +1,227 @@
+# WorldView API Catalog and Key Setup Checklist
+
+This file lists a large multi-domain OSINT API catalog for the WorldView platform, plus the exact API credentials you should provision first.
+
+## 1) APIs to prioritize and set up first (MVP)
+
+These are the minimum integrations to make a useful live multi-domain system:
+
+1. OpenSky Network (aviation)
+2. ADS-B Exchange (aviation)
+3. AISStream (maritime)
+4. CelesTrak + Space-Track (satellite)
+5. GDELT (global events/news)
+6. ACLED (conflict events)
+7. OpenStreetMap + Overpass (base geospatial layer)
+8. NASA FIRMS + USGS Earthquake (disaster layer)
+9. OpenSanctions + OFAC + OpenCorporates (watchlist/corporate)
+10. Reddit API + YouTube API + Mastodon API (social pulse)
+
+## 2) API keys/secrets you need to provide
+
+The app reads provider credentials from environment variables. Configure these first:
+
+- OPENSKY_CLIENT_ID
+- OPENSKY_CLIENT_SECRET
+- ADSB_EXCHANGE_API_KEY
+- AISSTREAM_API_KEY
+- SPACETRACK_USERNAME
+- SPACETRACK_PASSWORD
+- N2YO_API_KEY
+- SENTINELHUB_CLIENT_ID
+- SENTINELHUB_CLIENT_SECRET
+- PLANET_API_KEY
+- MAXAR_API_KEY
+- BLACKSKY_API_KEY
+- GFW_TOKEN
+- GDELT (no key)
+- ACLED_API_KEY
+- NEWSAPI_KEY
+- REDDIT_CLIENT_ID
+- REDDIT_CLIENT_SECRET
+- YOUTUBE_API_KEY
+- TELEGRAM_BOT_TOKEN
+- SHODAN_API_KEY
+- CENSYS_API_ID
+- CENSYS_API_SECRET
+- HIBP_API_KEY
+- OPENCORPORATES_API_TOKEN
+- COMPANIES_HOUSE_API_KEY
+- OPENWEATHER_API_KEY
+- FIRMS_MAP_KEY
+- OPENCELLID_API_KEY
+
+Also see `src/worldview/providers.py` for the complete env var list used by the service.
+
+---
+
+## 3) 120+ OSINT APIs and feeds by domain
+
+### Aviation (18)
+1. OpenSky Network API
+2. ADS-B Exchange API
+3. FlightAware Firehose
+4. Flightradar24 API
+5. RadarBox API
+6. PlaneFinder API
+7. Aviationstack API
+8. AeroDataBox API
+9. Aviation Edge API
+10. FlightStats API
+11. FlightLabs API
+12. Eurocontrol B2B API
+13. FAA SWIM
+14. ADSB.fi
+15. ADSBHub
+16. OpenADSB datasets
+17. SkyAware / dump1090 endpoints
+18. OurAirports data API
+
+### Maritime (16)
+19. MarineTraffic API
+20. VesselFinder API
+21. AISStream
+22. FleetMon API
+23. Datalastic API
+24. AISHub
+25. Global Fishing Watch API
+26. Spire Maritime
+27. ORBCOMM AIS
+28. exactEarth
+29. MarineCadastre
+30. Equasis datasets
+31. Port authority arrival/departure feeds
+32. IMO GISIS references
+33. ShipInfo API
+34. EMODnet vessel datasets
+
+### Satellite / EO / Space (18)
+35. Space-Track API
+36. CelesTrak
+37. N2YO API
+38. SatNOGS API
+39. RocketLaunch.Live API
+40. Spaceflight News API
+41. Planet API
+42. Sentinel Hub API
+43. Copernicus Data Space API
+44. NASA EarthData API
+45. ESA EO services
+46. Maxar SecureWatch
+47. BlackSky API
+48. Capella Space API
+49. Umbra API
+50. ICEYE API
+51. HawkEye 360 API
+52. EO Browser APIs
+
+### Geospatial / Mapping (13)
+53. OpenStreetMap API
+54. Overpass API
+55. Nominatim
+56. Mapbox API
+57. Google Maps Platform
+58. HERE Maps API
+59. OpenCage Geocoder
+60. GeoNames
+61. MapTiler
+62. ArcGIS REST services
+63. US Census Geocoder
+64. OpenRouteService
+65. Pelias geocoder
+
+### News / Event / Conflict (14)
+66. GDELT 2.0
+67. Event Registry API
+68. NewsAPI
+69. Mediastack
+70. AYLIEN News
+71. Bing News Search API
+72. Google News RSS
+73. ReliefWeb API
+74. ACLED API
+75. ICEWS dataset access
+76. UCDP datasets
+77. Global Terrorism Database
+78. Crisis24 feeds
+79. WHO emergencies feeds
+
+### Social / UGC (11)
+80. X/Twitter API
+81. Reddit API
+82. YouTube Data API
+83. Mastodon API
+84. Telegram Bot API
+85. Bluesky API
+86. TikTok research/unofficial endpoints
+87. Discord public server exports
+88. Pushshift-style archives
+89. SocialGrep
+90. Wikimedia recent changes API
+
+### Cyber / Internet / Infra (14)
+91. Shodan API
+92. Censys API
+93. BinaryEdge API
+94. GreyNoise API
+95. LeakIX API
+96. Netlas API
+97. ZoomEye API
+98. NetBlocks data
+99. Cloudflare Radar data
+100. RIPEstat API
+101. BGPStream
+102. URLScan API
+103. VirusTotal API
+104. AlienVault OTX API
+
+### Identity / Breach / Enrichment (10)
+105. Have I Been Pwned API
+106. Intelligence X API
+107. DeHashed API
+108. People Data Labs API
+109. Hunter.io API
+110. Clearbit API
+111. FullContact API
+112. OSINT Industries API
+113. Searchbug API
+114. Gravatar profiles API
+
+### Financial / Sanctions / Corporate (10)
+115. OpenCorporates API
+116. OpenSanctions
+117. OFAC SDN datasets
+118. OCCRP Aleph API
+119. UK Companies House API
+120. Interpol notices datasets
+121. FBI wanted API
+122. SEC EDGAR APIs
+123. EU sanctions map data
+124. World Bank open data APIs
+
+### Weather / Disaster / GNSS / Telecom / Transport (16)
+125. NOAA API
+126. OpenWeather API
+127. ECMWF API
+128. Meteostat
+129. Stormglass API
+130. USGS Earthquake API
+131. GDACS alerts
+132. NASA FIRMS
+133. EMSC feeds
+134. Copernicus EMS
+135. GPSJam
+136. GNSS Service Centre
+137. OpenCellID
+138. CellMapper
+139. WiGLE API
+140. Transitland API
+
+## 4) Legal and compliance notes (must-do)
+
+- Respect each provider's Terms of Service and attribution rules.
+- Add per-source usage throttling and retry policies.
+- Store license metadata per record (`source`, `license`, `redistribution_allowed`).
+- Separate personal data handling behind RBAC + audit logging.
+- Use jurisdiction-specific legal review before enabling identity/background integrations.
+
