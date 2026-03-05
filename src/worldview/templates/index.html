@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WorldView Intelligence Platform</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="brand">WORLD<span>VIEW</span></div>
+        <div class="tagline">NO PLACE LEFT BEHIND</div>
+      </div>
+      <div class="mode-switch">
+        <button class="mode-btn" data-mode="live" id="liveModeBtn">LIVE</button>
+        <button class="mode-btn active" data-mode="recorded" id="recordedModeBtn">PLAYBACK</button>
+      </div>
+      <div class="status">ACTIVE STYLE <strong>NORMAL</strong></div>
+    </header>
+
+    <main class="hud-layout">
+      <aside class="left-panel panel">
+        <div class="panel-title">TOP SECRET // SI-TK // NOFORN</div>
+        <div class="panel-subtitle">KH11-4176 OPS-4179</div>
+
+        <div class="stack" id="layers"></div>
+
+        <div class="coords-box">
+          <div>MGRS: <span id="mgrsValue">--</span></div>
+          <div id="latlonValue">--</div>
+        </div>
+      </aside>
+
+      <section class="center-stage">
+        <div class="orbital-overlay">
+          <div class="orbital-grid"></div>
+          <div class="globe-mask">
+            <div class="globe"></div>
+            <div class="telemetry-cloud" id="telemetryCloud"></div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="right-panel panel">
+        <div class="panel-title rec">● REC <span id="clock"></span></div>
+
+        <label>Domain
+          <select id="domainFilter"></select>
+        </label>
+        <label>Feed Type
+          <select id="freeFilter">
+            <option value="">All</option>
+            <option value="true">Free tier</option>
+            <option value="false">Paid only</option>
+          </select>
+        </label>
+
+        <button id="refreshBtn">SYNC FEEDS</button>
+
+        <div class="tiny-table-wrap">
+          <table>
+            <thead>
+            <tr><th>Asset</th><th>Domain</th><th>MGRS</th></tr>
+            </thead>
+            <tbody id="telemetryTableBody"></tbody>
+          </table>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="timeline panel">
+      <div class="timeline-top">
+        <div class="speed-controls">
+          <button>1m/s</button>
+          <button>3m/s</button>
+          <button>5m/s</button>
+          <button>15m/s</button>
+        </div>
+        <div class="timeline-track"><span class="timeline-head"></span></div>
+      </div>
+      <div class="pill-row" id="stats"></div>
+      <div class="pill-row" id="providersTableBody"></div>
+    </footer>
+
+    <section class="bottom-grid">
+      <article class="panel">
+        <h3>INTELLIGENCE RECORDS</h3>
+        <div id="records"></div>
+      </article>
+      <article class="panel">
+        <h3>API KEY CHECKLIST</h3>
+        <pre id="envVars"></pre>
+      </article>
+      <article class="panel">
+        <h3>NEWS SYNTHESIS</h3>
+        <form id="synthForm">
+          <input id="synthTitle" placeholder="Event title" required />
+          <input id="synthUrl" placeholder="Source URL" required />
+          <textarea id="synthBody" placeholder="Paste latest incident summary" required></textarea>
+          <button type="submit">ANALYZE</button>
+        </form>
+        <pre id="synthResult"></pre>
+      </article>
+    </section>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
