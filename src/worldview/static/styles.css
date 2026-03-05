@@ -1,0 +1,76 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 1rem 2rem 3rem;
+  background: #0b1220;
+  color: #e6edf7;
+}
+
+header {
+  margin-bottom: 1rem;
+}
+
+h1, h2 {
+  margin-bottom: 0.5rem;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+select, button {
+  background: #111a2b;
+  color: #dbe8ff;
+  border: 1px solid #334a73;
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+}
+
+.stats {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.card {
+  border: 1px solid #334a73;
+  border-radius: 10px;
+  padding: 0.6rem;
+  background: #0f1729;
+  min-width: 150px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+th, td {
+  border-bottom: 1px solid #263755;
+  text-align: left;
+  padding: 0.5rem;
+  vertical-align: top;
+}
+
+pre {
+  background: #0f1729;
+  border: 1px solid #334a73;
+  border-radius: 8px;
+  padding: 1rem;
+  white-space: pre-wrap;
+}

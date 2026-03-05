@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WorldView Intelligence Platform</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>WorldView Intelligence Platform</h1>
+    <p>Multi-domain OSINT API registry dashboard</p>
+  </header>
+
+  <section class="controls">
+    <label>
+      Domain
+      <select id="domainFilter"></select>
+    </label>
+    <label>
+      Pricing
+      <select id="freeFilter">
+        <option value="">All</option>
+        <option value="true">Free tier</option>
+        <option value="false">Paid only</option>
+      </select>
+    </label>
+    <button id="refreshBtn">Refresh</button>
+  </section>
+
+  <section class="stats" id="stats"></section>
+
+  <section>
+    <h2>Providers</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Domain</th>
+          <th>Auth</th>
+          <th>Free Tier</th>
+          <th>Env Vars</th>
+        </tr>
+      </thead>
+      <tbody id="providersTableBody"></tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Required API Keys / Secrets</h2>
+    <pre id="envVars"></pre>
+  </section>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
